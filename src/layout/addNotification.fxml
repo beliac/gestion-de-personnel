@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="745.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LayoutController.AddNotificationLayoutController">
+   <children>
+      <AnchorPane layoutX="20.0" layoutY="75.0" prefHeight="368.0" prefWidth="327.0" style="-fx-border-color: #6a467c; -fx-border-width: 5;" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.666666666666686" AnchorPane.topAnchor="75.0">
+         <children>
+            <Label layoutX="25.0" layoutY="66.0" text="Enseignant:" AnchorPane.leftAnchor="25.0" />
+            <Label layoutX="16.0" layoutY="142.0" text="Type Notification:" AnchorPane.leftAnchor="16.0" />
+            <Label layoutX="23.0" layoutY="314.0" text="Date Fin:" AnchorPane.leftAnchor="10.0" />
+            <SplitMenuButton fx:id="listButtonTypeNotification" layoutX="133.0" layoutY="137.0" mnemonicParsing="false" text="confirmation stage" AnchorPane.leftAnchor="133.0">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#confirmationDeStage" text="confirmation de stage" />
+                <MenuItem fx:id="mandat" mnemonicParsing="false" onAction="#selctNotificationmandat" text="mandat" />
+                <MenuItem fx:id="conge" mnemonicParsing="false" onAction="#selctNotificationechlon" text="echlon" />
+                  <MenuItem mnemonicParsing="false" onAction="#selctNotificationCongeMaladie" text="Conge Maladie" />
+                <MenuItem fx:id="matirnite" mnemonicParsing="false" onAction="#selctNotificatioCongeMatirnite" text="Conge Matirnite" />
+                  <MenuItem fx:id="miseendiso" mnemonicParsing="false" onAction="#selctNotificationMiseEnDispo" text="Conge Mise en disponibilite" />
+                  <MenuItem fx:id="custom" mnemonicParsing="false" onAction="#selctNotificationcostum" text="au choix" />
+              </items>
+            </SplitMenuButton>
+            <Label layoutX="28.0" layoutY="219.0" text="Contenu:" AnchorPane.leftAnchor="10.0" />
+            <DatePicker fx:id="dateNotification" layoutX="141.0" layoutY="309.0" prefHeight="25.0" prefWidth="149.0" AnchorPane.leftAnchor="141.0" />
+            <TextArea fx:id="contenuTextArea" layoutX="125.0" layoutY="198.0" prefHeight="78.0" prefWidth="171.0" AnchorPane.leftAnchor="125.0" />
+            <TextField fx:id="searchfield" layoutX="381.0" layoutY="61.0" prefHeight="28.0" prefWidth="238.0" promptText="chercher par prenom" />
+            <Button fx:id="searchBtn" layoutX="640.0" layoutY="59.0" mnemonicParsing="false" onAction="#searchAction" prefHeight="17.0" prefWidth="36.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-chercher-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ListView fx:id="ensgListInfo" layoutX="377.0" layoutY="99.0" prefHeight="178.0" prefWidth="308.0" style="-fx-border-color: grey;" />
+            <Button fx:id="selectBtn" disable="true" layoutX="433.0" layoutY="286.0" mnemonicParsing="false" onAction="#selectAction" prefHeight="26.0" prefWidth="175.0" text="Selectionner" />
+            <Label fx:id="enseignantInfo" layoutX="160.0" layoutY="65.0" text="vide" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="declencherNotification" layoutX="250.0" layoutY="451.0" mnemonicParsing="false" onAction="#save" prefHeight="26.0" prefWidth="103.0" stylesheets="@style.css" text="Declencher" textFill="#111010" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <BorderPane layoutY="21.0" prefHeight="37.0" prefWidth="368.0">
+         <bottom>
+            <AnchorPane prefHeight="37.0" prefWidth="583.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="59.0" layoutY="-7.0" prefHeight="42.0" prefWidth="515.0" text="Cree une notification" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="-206.0">
+                     <font>
+                        <Font name="Harlow Solid Italic" size="25.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.5206349191211519">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1872563362121582" green="0.0968567281961441" blue="0.23245614767074585" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.445848673582077" green="0.308993935585022" blue="0.49561402201652527" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Line endX="586.5048828125" endY="-3.814697265625E-6" fill="#714f7d" layoutX="151.0" layoutY="35.0" startX="-147.00001525878906" strokeWidth="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.658823549747467" green="0.4901960790157318" blue="0.6705882549285889" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Line>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/notification.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+      <Button fx:id="declencherNotification1" layoutX="507.0" layoutY="452.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="103.0" stylesheets="@style.css" text="cancel" AnchorPane.bottomAnchor="7.666666666666686">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

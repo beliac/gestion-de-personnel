@@ -1,0 +1,16 @@
+.root{
+     -fx-background-color: white;
+     -fx-font-size: 10pt;
+     -fx-font-family:"Book Antiqua";
+     
+ }
+ .button{
+	-fx-font-color  : #ffffff;
+	
+	-fx-width:230;
+	
+	 -fx-background-radius: 5em;
+ 
+
+  
+}
